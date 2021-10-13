@@ -38,9 +38,9 @@ BOT_ID = XXXXXXXXXXXXXXXXXXXXX
 
 ### When registering your webhook urls to slack, you use the following:
 ```
-    1. For Events: http[s]://yourdomain.name/slack-app/events [If you changed the root url name, you but that instead of slack-app]
+    1. For Events: http[s]://yourdomain.name/slack-app/events [If you changed the root url name, use that instead of slack-app]
 
-    2. For Slash Commands: http[s]://yourdomain.name/slack-app/slash-commands [If you changed the root url name, you but that instead of slack-app]
+    2. For Slash Commands: http[s]://yourdomain.name/slack-app/slash-commands [If you changed the root url name, use that instead of slack-app]
 ```
 
 ### EXAMPLE
