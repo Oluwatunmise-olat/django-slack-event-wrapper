@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: django-slack-event-wrapper
-Version: 0.1.11
+Version: 0.1.12
 Summary: This is a django wrapper to handle slack events and slash commands.
 Home-page: UNKNOWN
 Author: Oluwatunmise Olatunbosun
@@ -85,7 +85,7 @@ Description: ## DJANGO SLACK EVENT WRAPPER
         
         ==========
         
-        0.1.11(11-10-2021)
+        0.1.12(11-10-2021)
         ----------------
         - First Release
         

@@ -4,7 +4,7 @@ from django.utils.decorators import method_decorator
 from django.conf import settings
 
 from django_slack_event_wrapper.verify_signature import validate_request
-from django_slack_event_wrapper.dispatcher import slack_event_emitter, slash_command_emitter
+from django_slack_event_wrapper.events import slack_event_trigger, slash_event_trigger
 
 
 try:
@@ -33,7 +33,7 @@ class SlackEventView(APIView):
 
     def post(self, request):
         received_data = request.data
-        if received_data['type'] and received_data['type'] == 'url_verfication':
+        if received_data['type'] and received_data['type'] == 'url_verification':
             return Response({'challenge': received_data['challenge']}, status="200")
 
         if received_data['type'] == 'app_rate_limited':
@@ -51,15 +51,15 @@ class SlackEventView(APIView):
         # Holds field data for occuring event
         event = received_data['event']
         # Event that occured
-        event_type = received_data['event_type']
+        event_type = event['type']
 
-        return slack_event_emitter(team_id=team_id, event_type=event_type, event=event)
+        return slack_event_trigger(team_id=team_id, event_type=event_type, event=event)
 
 
 class SlashCommandView(APIView):
 
     # validates all incomming request
-    @method_decorator(validate_request)
+    @ method_decorator(validate_request)
     def dispatch(self, *args, **kwargs):
         return super(SlashCommandView, self).dispatch(*args, **kwargs)
 
@@ -68,5 +68,5 @@ class SlashCommandView(APIView):
         user_id = received_data.get('user_id')
         channel_id = received_data.get('channel_id')
         # dispatch event
-        slash_command_emitter(user_id=user_id, channel_id=channel_id, event=received_data)
+        slash_event_trigger(user_id=user_id, channel_id=channel_id, slash_event_data=received_data)
         return Response(status="200")
