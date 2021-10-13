@@ -9,10 +9,8 @@ from django_slack_event_wrapper.dispatcher import slack_event_emitter, slash_com
 
 try:
     settings.VERIFICATION_TOKEN
-    SETTINGS.SIGNING_SECRET
-    SETTINGS.APP_ID
-    SETTINGS.OAUTH_TOKEN
-    SETTINGS.BOT_ID
+    settings.SIGNING_SECRET
+    settings.APP_ID
 
 except Exception as e:
     raise Exception(

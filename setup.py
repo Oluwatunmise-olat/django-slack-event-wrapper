@@ -12,7 +12,7 @@ classifiers = [
 
 setup(
     name='django_slack_event_wrapper',
-    version='0.1.10',
+    version='0.1.11',
     description='This is a django wrapper to handle slack events and slash commands.',
     author='Oluwatunmise Olatunbosun',
     long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.txt').read(),
