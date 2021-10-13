@@ -1,5 +1,6 @@
 CHANGELOG.txt
 django-slack-event-wrapper.egg-info
-LINCENSE.txt
+LICENSE.txt
 dist
 MANIFEST.in
+setup.py
