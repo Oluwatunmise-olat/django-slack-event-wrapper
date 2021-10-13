@@ -1,0 +1,1 @@
+default_app_config = 'django_slack_event_wrapper.apps.DjangoSlackeventWrapperConfig'
